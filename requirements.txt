@@ -1,0 +1,8 @@
+python3
+flask
+flask_cors
+dotenv
+requests
+os
+langchain
+openai
