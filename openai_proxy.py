@@ -1,3 +1,5 @@
+# This is the OpenAI API proxy server. It needs to be running to actually send requests to OpenAI
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
