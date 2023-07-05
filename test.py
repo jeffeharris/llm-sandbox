@@ -1,3 +1,5 @@
+## This is just a test python file, not using it for the actual website
+
 from langchain import OpenAI, ConversationChain
 from dotenv import load_dotenv
 
