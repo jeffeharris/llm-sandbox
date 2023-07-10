@@ -1,6 +1,6 @@
-const form = document.getElementById('apiForm');
-
-form.addEventListener('submit', async (event) => {
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
     event.preventDefault();
 
     // Show the loading icon
@@ -70,4 +70,3 @@ form.addEventListener('submit', async (event) => {
         jsonElement.textContent = '';
     }
 });
- 
