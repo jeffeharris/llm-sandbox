@@ -1,4 +1,6 @@
-const form = document.getElementById('apiForm');
+document.getElementById('toggleDarkMode').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -70,4 +72,3 @@ form.addEventListener('submit', async (event) => {
         jsonElement.textContent = '';
     }
 });
- 
