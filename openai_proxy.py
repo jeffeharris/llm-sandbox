@@ -28,5 +28,17 @@ def api():
     return jsonify(response.json()), response.status_code
 
 
+@app.route('/listmodels', methods=['GET'])
+def listmodels():
+    headers = {
+        'Authorization': f'Bearer {openai_api_key}',
+        # 'Content-Type': 'application/json'
+    }
+
+    response = requests.get('https://api.openai.com/v1/models', headers=headers, json=request.get_json())
+
+    return jsonify(response.json()), response.status_code
+
+
 if __name__ == '__main__':
     app.run(port=3000, debug=True)

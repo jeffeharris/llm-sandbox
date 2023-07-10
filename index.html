@@ -14,7 +14,7 @@
                 <select id="model" name="model">
                     <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
                     <option value="gpt-3.5-turbo-16k">gpt-3.5-turbo-16k</option>
-                    <option value="gpt-4-0613">gpt-4-0613</option>
+                    <option value="gpt-4">gpt-4</option>
                 </select>
 
                 <label for="systemDescription">System Description:</label>
@@ -44,5 +44,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked@2.0.0/marked.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Run this function after the page loads
+        window.onload = function() {
+            // Replace this URL with the URL for your API
+            const url = 'http://localhost:3000/listmodels';
+    
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById('model');
+                    data.forEach(item => {
+                        const option = document.createElement('option');
+                        option.value = item.value;
+                        option.text = item.text;
+                        select.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
 </body>
 </html>
